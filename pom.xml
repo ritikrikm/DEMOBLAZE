@@ -1,88 +1,92 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>Demoblaze</groupId>
-  <artifactId>Demoblaze</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  <dependencies>
-  <!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>4.43.0</version>
-    <scope>compile</scope>
-</dependency>
-<!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->
-<dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.12.0</version>
-    <scope>test</scope>
-</dependency>
-<!-- Source: https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-<dependency>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-lang3</artifactId>
-    <version>3.20.0</version>
-    <scope>compile</scope>
-</dependency>
-<!-- Source: https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-<dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>extentreports</artifactId>
-    <version>5.1.2</version>
-    <scope>compile</scope>
-</dependency>
-<!-- Source: https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
-<dependency>
-    <groupId>io.qameta.allure</groupId>
-    <artifactId>allure-testng</artifactId>
-    <version>2.34.0</version>
-    <scope>test</scope>
-</dependency>
-  </dependencies>
-  <build>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <plugins>
- <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-surefire-plugin</artifactId>
-      <version>3.2.5</version>
-      <configuration>
-        <suiteXmlFiles>
-          <suiteXmlFile>testng.xml</suiteXmlFile>
-        </suiteXmlFiles>
-      </configuration>
-    </plugin>
-    <plugin>
+    <groupId>com.carbocalc</groupId>
+    <artifactId>carbohydrate-calculator-automation</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Carbohydrate Calculator Automation Framework</name>
 
-      <groupId>io.qameta.allure</groupId>
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <selenium.version>4.21.0</selenium.version>
+        <testng.version>7.10.2</testng.version>
+        <log4j2.version>2.23.1</log4j2.version>
+        <extentreports.version>5.1.2</extentreports.version>
+        <webdrivermanager.version>5.8.0</webdrivermanager.version>
+    </properties>
 
-      <artifactId>allure-maven</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
 
-      <version>2.10.0</version>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-      <executions>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-        <execution>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
 
-          <id>allure-report</id>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
 
-          <phase>verify</phase>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
 
-          <goals>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.13</version>
+        </dependency>
 
-            <goal>report</goal>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extentreports.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-          </goals>
-
-        </execution>
-
-      </executions>
-
-    </plugin>
-
-  </plugins>
-
-</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <env>${env}</env>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -1,1 +1,0 @@
-{"uuid":"8adf2aec-e925-49cc-a43a-a502c2111c01","name":"testCases.DashboardTest.login","children":["14a46621-8606-40c1-bf5b-a97ac3493273"],"description":"","befores":[{"name":"login","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1776367492787,"stop":1776367494312}],"afters":[],"start":1776367492787,"stop":1776367494312}

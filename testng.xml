@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests">
-<listeners>
-<listener class-name='utility.ExtentReportManager' />
-</listeners>
-<listeners>
-    <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
-</listeners>
-  <test thread-count="5" name="Test1">
+<suite name="CarbohydrateCalculatorSuite" parallel="methods" thread-count="2">
+    <listeners>
+        <listener class-name="com.carbocalc.listeners.TestListener"/>
+    </listeners>
 
-    <classes>
-      <class name="testCases.HomePageTest001"/>
-    </classes>
-  </test> <!-- Test -->
-  
-  <test thread-count="5" name="Test2">
-
-    <classes>
-     <class name="testCases.AccountRegister001"/>
-      <class name="testCases.AccountLogin001"/>
-       <class name="testCases.DashboardTest"/>
-         <class name="testCases.ProductTest001"/>
-    </classes>
-  </test> <!-- Test -->
-  
- 
-</suite> <!-- Suite -->
+    <test name="CalculatorRegressionScaffold">
+        <classes>
+            <class name="com.carbocalc.tests.CarbohydrateCalculatorTestCases"/>
+        </classes>
+    </test>
+</suite>
