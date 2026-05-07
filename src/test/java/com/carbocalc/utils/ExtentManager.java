@@ -18,9 +18,9 @@ public final class ExtentManager {
     public static synchronized ExtentReports getInstance() {
         if (extentReports == null) {
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-            String reportPath = "src/test/resources/reports/ExtentReport_" + timestamp + ".html";
+            String reportPath = "target/extent-reports/ExtentReport_" + timestamp + ".html";
 
-            new File("src/test/resources/reports").mkdirs();
+            new File("target/extent-reports").mkdirs();
 
             ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
             sparkReporter.config().setDocumentTitle("Carbohydrate Calculator Automation Report");

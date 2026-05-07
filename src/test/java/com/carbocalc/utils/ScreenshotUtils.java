@@ -24,7 +24,7 @@ public final class ScreenshotUtils {
 
     public static String capture(WebDriver driver, String testName) {
         try {
-            Path directory = Paths.get("src", "test", "resources", "screenshots");
+            Path directory = Paths.get("target", "screenshots");
             Files.createDirectories(directory);
 
             String fileName = testName + "_" + LocalDateTime.now().format(FORMATTER) + ".png";

@@ -1,9 +1,0 @@
-/home/runner/work/DEMOBLAZE/DEMOBLAZE/src/test/java/com/carbocalc/base/BasePage.java
-/home/runner/work/DEMOBLAZE/DEMOBLAZE/src/test/java/com/carbocalc/base/BaseTest.java
-/home/runner/work/DEMOBLAZE/DEMOBLAZE/src/test/java/com/carbocalc/driver/DriverFactory.java
-/home/runner/work/DEMOBLAZE/DEMOBLAZE/src/test/java/com/carbocalc/listeners/TestListener.java
-/home/runner/work/DEMOBLAZE/DEMOBLAZE/src/test/java/com/carbocalc/pages/CarbohydrateCalculatorPage.java
-/home/runner/work/DEMOBLAZE/DEMOBLAZE/src/test/java/com/carbocalc/tests/CarbohydrateCalculatorTestCases.java
-/home/runner/work/DEMOBLAZE/DEMOBLAZE/src/test/java/com/carbocalc/utils/ConfigReader.java
-/home/runner/work/DEMOBLAZE/DEMOBLAZE/src/test/java/com/carbocalc/utils/ExtentManager.java
-/home/runner/work/DEMOBLAZE/DEMOBLAZE/src/test/java/com/carbocalc/utils/ScreenshotUtils.java

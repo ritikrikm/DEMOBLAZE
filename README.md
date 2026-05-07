@@ -103,9 +103,7 @@ src
     └── resources
         ├── config
         │   └── config.properties
-        ├── log4j2.xml
-        ├── reports
-        └── screenshots
+        └── log4j2.xml
 ```
 
 ## How to Run
@@ -116,4 +114,4 @@ mvn test
 ## Notes
 - Test methods are placeholders only, by design.
 - You can enable a test method and add your own flow/assertions when ready.
-- Reports and screenshots are generated under `src/test/resources/reports` and `src/test/resources/screenshots`.
+- Reports and screenshots are generated under `target/extent-reports` and `target/screenshots`.

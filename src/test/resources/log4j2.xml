@@ -10,8 +10,8 @@
         </Console>
 
         <RollingFile name="FileAppender"
-                     fileName="src/test/resources/reports/framework.log"
-                     filePattern="src/test/resources/reports/framework-%d{yyyy-MM-dd}-%i.log.gz">
+                     fileName="target/logs/framework.log"
+                     filePattern="target/logs/framework-%d{yyyy-MM-dd}-%i.log.gz">
             <PatternLayout pattern="${pattern}"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1"/>
